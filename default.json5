@@ -1,0 +1,40 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "timezone": "Asia/Tokyo",
+  "labels": ["renovate"],
+  "configMigration": true,
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":separateMajorReleases",
+    ":ignoreUnstable",
+    ":prHourlyLimitNone",
+    ":prConcurrentLimitNone",
+    "helpers:pinGitHubActionDigestsToSemver",
+    "schedule:automergeNonOfficeHours"
+  ],
+  "rebaseWhen": "conflicted",
+  "prNotPendingHours": 1,
+  "stabilityDays": 3,
+  "postUpdateOptions": ["gomodTidy", "pnpmDedupe", "npmDedupe"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+  },
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "automerge": true,
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["eslint"],
+      "allwdVersions": "<9.0.0",
+      "description": "do not upgrade before the ecosystem is ready for v9"
+    }
+  ]
+}
