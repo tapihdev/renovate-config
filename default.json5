@@ -27,6 +27,11 @@
   },
   "packageRules": [
     {
+      "matchDepTypes": ["action"],
+      "excludePackagePrefixes": ["actions/"],
+      "pinDigests": true
+    },
+    {
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true
