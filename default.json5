@@ -38,7 +38,7 @@
     },
     {
       "matchPackageNames": ["eslint"],
-      "allwdVersions": "<9.0.0",
+      "allwedVersions": "<9.0.0",
       "description": "do not upgrade before the ecosystem is ready for v9"
     }
   ]
