@@ -28,7 +28,7 @@
   "packageRules": [
     {
       "matchDepTypes": ["action"],
-      "excludePackagePrefixes": ["actions/"],
+      "excludePackagePrefixes": ["actions/", "tapihdev/"],
       "pinDigests": true
     },
     {
