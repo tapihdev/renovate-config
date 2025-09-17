@@ -16,6 +16,7 @@
   "rebaseWhen": "conflicted",
   "prNotPendingHours": 1,
   "stabilityDays": 3,
+  "minimumReleaseAge": '7 days',
   "postUpdateOptions": ["gomodTidy", "pnpmDedupe", "npmDedupe"],
   "lockFileMaintenance": {
     "enabled": true,
